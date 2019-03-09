@@ -11,12 +11,12 @@ namespace TrainerLib
 {
     public class Trainer : Script
     {
-        private ModuleHandler moduleHandler;
+        public HandlerModule ModuleHandler { get; }
 
         public Trainer()
         {
+            ModuleHandler = new HandlerModule(this);
             new HandlerEvents(this);
-            moduleHandler = new ModuleHandler(this);
         }
     }
 }

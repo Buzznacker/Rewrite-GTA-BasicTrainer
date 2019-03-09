@@ -24,7 +24,10 @@ namespace TrainerLib.Module
             get;
         }
 
-
+        /// <summary>
+        /// On Tick event is called inside the toggled module
+        /// </summary>
+        void onTick();
 
     }
 }

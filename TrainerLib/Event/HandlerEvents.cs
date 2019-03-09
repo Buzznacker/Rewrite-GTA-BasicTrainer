@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainerLib.Handler;
+using TrainerLib.Module;
 
 namespace TrainerLib.Event
 {
@@ -16,7 +17,10 @@ namespace TrainerLib.Event
 
         public void onTick(object sender, EventArgs args)
         {
-
+            trainer.ModuleHandler.Modules
+                .Where(mod => mod.Toggled)
+                .ToList()
+                .ForEach(mod => mod.onTick());
         }
     }
 }
